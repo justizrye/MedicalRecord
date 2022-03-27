@@ -83,14 +83,6 @@ namespace MedicalRecord.WebAPI.Controllers
                     _logger.LogInformation("SearchEmployeesAsync End");
                     return BadRequest(ex);
                 }
-                //if (updatedDateStart == DateTime.MinValue || updatedDateEnd == DateTime.MinValue)
-                //{
-                //    return BadRequest(new Exception("Valid date range must be specified"));
-                //}
-                //if (temperatureFrom < 0 || temperatureTo < 0)
-                //{
-                //    return BadRequest(new Exception("Valid temperature range must be specified"));
-                //}
                 var employees = _employeeRepo.SearchEmployees(id, firstName, lastName, updatedDateStart, updatedDateEnd, temperatureFrom, temperatureTo);
                 _logger.LogInformation("SearchEmployees End");
                 return Ok(employees);
@@ -129,14 +121,6 @@ namespace MedicalRecord.WebAPI.Controllers
                     _logger.LogInformation("SearchEmployeesAsync End");
                     return BadRequest(ex);
                 }
-                //if (updatedDateStart == DateTime.MinValue || updatedDateEnd == DateTime.MinValue)
-                //{
-                //    return BadRequest(new Exception("Valid date range must be specified"));
-                //}
-                //if (temperatureFrom < 0 || temperatureTo < 0)
-                //{
-                //    return BadRequest(new Exception("Valid temperature range must be specified"));
-                //}
                 var employees = await _employeeRepo.SearchEmployeesAsync(id, firstName, lastName, updatedDateStart, updatedDateEnd, temperatureFrom, temperatureTo);
                 _logger.LogInformation("SearchEmployeesAsync End");
                 return Ok(employees);
